@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Mukta", sans-serif;
+  width: 100%;
+  height: 100vh;
+  background-color: #25291c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+:root {
+  font-size: 16px;
+}
+
+.container {
+  height: 95vh;
+}
+
+.watch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 35px;
+}
+
+.text {
+  color: #e3e7d3;
+}
+
+.name {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+}
+
+.outer-circle {
+  width: 30vh;
+  height: 30vh;
+  border-radius: 50%;
+  background-color: #e3e7d3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-circle {
+  width: 27vh;
+  height: 27vh;
+  border-radius: 50%;
+  background-color: #25291c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.minutes {
+  font-size: 3rem;
+}
+
+.seconds {
+  font-size: 2.4rem;
+}
+
+.milliseconds {
+  font-size: 1.8rem;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+}
+
+.button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #e3e7d3;
+  background-color: #25291c;
+  color: #e3e7d3;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #e3e7d3;
+  color: #25291c;
+  font-weight: 700;
+}
+
+.laps {
+  position: relative;
+}
+
+.lap-clear-button {
+  display: block;
+  position: fixed;
+  z-index: 100;
+  left: 50%;
+  transform: translate(-50%);
+  width: 100px;
+  padding: 10px;
+  border-radius: 50px;
+  background-color: rgba(189, 194, 191, 0.8);
+  color: #25291c;
+  border: 2px solid #bdc2bf;
+  cursor: pointer;
+}
+
+.lap-clear-button:hover {
+  background-color: #bdc2bf;
+  font-weight: 700;
+}
+
+.hidden {
+  visibility: hidden;
+}
