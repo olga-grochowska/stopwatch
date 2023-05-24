@@ -14,11 +14,6 @@ let secCounter = 0;
 let msec;
 let msecCounter = 0;
 
-const toggleButton = () => {
-  lapButton.classList.remove("hidden");
-  resetButton.classList.remove("hidden");
-};
-
 const play = () => {
   if (!isPlay) {
     playButton.innerHTML = "Pause";
@@ -67,7 +62,19 @@ const play = () => {
     clearInterval(min);
     isPlay = false;
   }
-  toggleButton();
+  lapButton.classList.remove("hidden");
+  resetButton.classList.remove("hidden");
+};
+
+const reset = () => {
+  isPlay = true;
+  play();
+  milliseconds.innerHTML = ":00";
+  seconds.innerHTML = ":00";
+  minutes.innerHTML = "00";
+  resetButton.classList.add("hidden");
+  lapButton.classList.add("hidden");
 };
 
 playButton.addEventListener("click", play);
+resetButton.addEventListener("click", reset);

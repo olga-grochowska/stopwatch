@@ -116,7 +116,6 @@ body {
 .button:hover {
   background-color: #e3e7d3;
   color: #25291c;
-  font-weight: 500;
 }
 
 .laps {
@@ -140,7 +139,6 @@ body {
 
 .lap-clear-button:hover {
   background-color: #bdc2bf;
-  font-weight: 500;
 }
 
 .hidden {
