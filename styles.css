@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "Mukta", sans-serif;
+  font-family: "DM Mono", monospace;
   width: 100%;
   height: 100vh;
   background-color: #25291c;
@@ -36,14 +36,14 @@ body {
 }
 
 .name {
-  letter-spacing: 2px;
+  letter-spacing: 5px;
   text-transform: uppercase;
   font-size: 2.5rem;
 }
 
 .outer-circle {
-  width: 30vh;
-  height: 30vh;
+  width: 230px;
+  height: 230px;
   border-radius: 50%;
   background-color: #e3e7d3;
   display: flex;
@@ -51,9 +51,33 @@ body {
   align-items: center;
 }
 
+.animation-background {
+  background: linear-gradient(
+    -45deg,
+    #ee7752,
+    #ffa500,
+    #e73c73,
+    #23a6d5,
+    #23d5ab
+  );
+  background-size: 400%;
+  animation: 5s ease-in infinite gradient;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .inner-circle {
-  width: 27vh;
-  height: 27vh;
+  width: 210px;
+  height: 210px;
   border-radius: 50%;
   background-color: #25291c;
   display: flex;
@@ -92,7 +116,7 @@ body {
 .button:hover {
   background-color: #e3e7d3;
   color: #25291c;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .laps {
@@ -116,7 +140,7 @@ body {
 
 .lap-clear-button:hover {
   background-color: #bdc2bf;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .hidden {
