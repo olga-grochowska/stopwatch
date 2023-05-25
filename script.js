@@ -5,6 +5,8 @@ const background = document.querySelector(".outer-circle");
 const minutes = document.querySelector(".minutes");
 const seconds = document.querySelector(".seconds");
 const milliseconds = document.querySelector(".milliseconds");
+const laps = document.querySelector(".laps");
+const clearAllButton = document.querySelector(".lap-clear-button");
 
 let isPlay = false;
 let min;
@@ -13,6 +15,7 @@ let sec;
 let secCounter = 0;
 let msec;
 let msecCounter = 0;
+let lapId = 0;
 
 const play = () => {
   if (!isPlay) {
@@ -66,15 +69,42 @@ const play = () => {
   resetButton.classList.remove("hidden");
 };
 
+const lap = () => {
+  const li = document.createElement("li");
+  const number = document.createElement("span");
+  const timeStamp = document.createElement("span");
+  li.setAttribute("class", "lap-item");
+  number.setAttribute("class", "number");
+  timeStamp.setAttribute("class", "time-stamp");
+  number.innerHTML = `#${++lapId}`;
+  timeStamp.innerHTML = `${minCounter}:${secCounter}:${msecCounter}`;
+  li.append(number, timeStamp);
+  laps.prepend(li);
+  clearAllButton.classList.remove("hidden");
+};
+
+const clearAll = () => {
+  laps.innerHTML = "";
+  laps.append(clearAllButton);
+  lapId = 0;
+  clearAllButton.classList.add("hidden");
+};
+
 const reset = () => {
   isPlay = true;
   play();
+  msecCounter = 0;
+  secCounter = 0;
+  minCounter = 0;
   milliseconds.innerHTML = ":00";
   seconds.innerHTML = ":00";
   minutes.innerHTML = "00";
   resetButton.classList.add("hidden");
   lapButton.classList.add("hidden");
+  clearAll();
 };
 
 playButton.addEventListener("click", play);
 resetButton.addEventListener("click", reset);
+lapButton.addEventListener("click", lap);
+clearAllButton.addEventListener("click", clearAll);
